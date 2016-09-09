@@ -1,0 +1,24 @@
+<h1>
+  {{title}}
+</h1>
+
+<section>
+  <H3>TOTAL:{{ total() }}</H3>
+    <div>
+      <article *ngFor="let producto of productos">
+        <p>{{producto.id}}-{{producto.name | uppercase}}</p>
+        <ul>
+          <li>price: {{producto.price | currency:'MXN':true}}</li>
+          <li>stock: {{producto.stock}}</li>
+          <li *ngIf="false">SOLD OUT!</li>
+        </ul>
+        
+        <button (click)="addProduct(producto)">Agregar</button>
+        {{producto.quantity}}
+        <button (click)="removeProduct(producto)">Quitar</button>
+      </article>
+    </div>
+</section>
+
+<app-second-component></app-second-component>
+
