@@ -9,8 +9,8 @@
         <p>{{producto.id}}-{{producto.name | uppercase}}</p>
         <ul>
           <li>price: {{producto.price | currency:'MXN':true}}</li>
-          <li>stock: {{producto.stock}}</li>
-          <li *ngIf="false">SOLD OUT!</li>
+          <li>stock: {{remain(producto)}}</li>
+          <li *ngIf="remain(producto) == 0 " class="sold_out">SOLD OUT!</li>
         </ul>
         
         <button (click)="addProduct(producto)">Agregar</button>

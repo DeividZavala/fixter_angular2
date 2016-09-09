@@ -35,4 +35,10 @@ export class AppComponent {
     return total 
   }
 
+  remain(producto){
+    let restan
+    restan = producto.stock - producto.quantity
+    return restan
+  }
+
 }
